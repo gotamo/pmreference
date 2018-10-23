@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+     
+    <h:head>
+        <title>Document</title>
+    </h:head>
+     
+    <h:body>
+        <h:form>
+            <p:dataTable var="doc" value="#{menuManagedBean.documents}">
+                <p:column headerText="Document Type">
+                    <h:outputText value="#{doc.documentType}" />
+                </p:column>
+ 
+                <p:column headerText="Name">
+                    <h:outputText value="#{doc.fullName}" />
+                </p:column>
+ 
+                <p:column style="width:32px;text-align: center">
+                    <p:commandButton icon="ui-icon-search" actionListener="#{processManagedBean.selectDocumentFromDialog(doc)}" />
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+     
+</html>
