@@ -7,12 +7,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table( name = "PROCESS_GROUPS" )
-public class ProcessGroup {
+public class ProcessGroup implements Comparable<ProcessGroup> {
 	private Long id;
 	private String code;
 	private String shortName;
 	private String fullName;
-	private String description;
+	private Integer order;
 	
 	@Id
 	@Column(name="ID")
@@ -47,11 +47,21 @@ public class ProcessGroup {
 		this.fullName = fullName;
 	}
 	
-	@Column(name="DESCRIPTION")
-	public String getDescription() {
-		return description;
+	@Column(name="ORDER")
+	public Integer getOrder() {
+		return order;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setOrder(Integer order) {
+		this.order = order;
+	}
+	
+	@Override
+	public int compareTo(ProcessGroup o) {
+		return 0;
+	}
+	
+	@Override
+	public String toString() {
+		return this.fullName;
 	}
 }

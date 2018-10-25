@@ -10,5 +10,6 @@ import it.javaboss.pmknowledge.model.KnowledgeArea;
 @Repository
 public interface KnowledgeAreaRepository extends JpaRepository<KnowledgeArea,Long>{
 	public List<KnowledgeArea> findByFullNameContaining(String fullName);
+	public List<KnowledgeArea> findAllByOrderByOrderAsc();
 
 }

@@ -59,4 +59,8 @@ public class ToolAndTechnique implements Identifiable, Hierarchy {
 		this.fileName = fileName;
 	}
 	
+	@Override
+	public String toString() {
+		return this.name;
+	}
 }

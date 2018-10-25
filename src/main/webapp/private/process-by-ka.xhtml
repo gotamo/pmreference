@@ -1,0 +1,79 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:form id="processForm">
+		<p:repeat value="#{queryProcessManagedBean.filteredProcessesByKA}" var="entry">
+			<p:fieldset legend="#{entry.key.fullName}" toggleable="true" toggleSpeed="500">
+			
+				<p:repeat value="#{entry.value}" var="process">
+					
+					<p:fieldset legend="#{process.processGroup.shortName}: #{process.name}" toggleable="true" toggleSpeed="500" styleClass="fiedsetRed">
+						<div class="ui-g">
+							<div class="ui-g-4">
+								<p:panel id="input" header="Input">
+									<p:tree value="#{process.processInputTree}" var="processInput" style="width: 100%; border: 0" >
+								        <p:treeNode>						     
+								            <h:outputText rendered="#{empty processInput.document.shortName}" value="#{processInput.document.fullName} " />
+						                	
+						                	<h:outputText id="docShortName" rendered="#{not empty processInput.document.shortName}" value="#{processInput.document.shortName} " />
+						                	<p:tooltip for="docShortName"  rendered="#{not empty processInput.document.shortName}" value="#{processInput.document.fullName}" />
+								        	
+								        	<p:commandLink action="#{showInfoManagedBean.showDocument}" rendered="#{not empty processInput.document.fileName}">
+								        		<h:graphicImage  value="/resources/img/open_link_2.png" height="15px" width="15px"/>
+								        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoToShow}" value="#{processInput.document.fileName}"/>
+								        	</p:commandLink>
+								        </p:treeNode>
+								    </p:tree>
+								</p:panel>
+							</div>
+					    	<div class="ui-g-4">
+					    		<p:panel id="ToolsAndTechniques" header="Tools And Techniques">
+				            		<p:tree value="#{process.processTT}" var="processTT" style="width: 100%; border: 0" >
+								        <p:treeNode>						     
+								            <h:outputText value="#{processTT.toolAndTechnique.name}" />
+						                		        	
+								        	<p:commandLink action="#{showInfoManagedBean.showTool}" rendered="#{not empty processTT.toolAndTechnique.fileName}">
+								        		<h:graphicImage  value="/resources/img/open_link_2.png" height="15px" width="15px"/>
+								        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoToShow}" value="#{processTT.toolAndTechnique.fileName}"/>
+								        	</p:commandLink>
+								        </p:treeNode>
+								    </p:tree>
+				          		</p:panel>
+					    	</div>
+					    	<div class="ui-g-4">
+						    	 <p:panel id="output" header="Ouptut" style="width:100%">
+									<p:tree value="#{process.processOutputTree}" var="processOutput" style="width: 100%; border: 0" >
+								        <p:treeNode>
+								            <h:outputText rendered="#{empty processOutput.document.shortName}" value="#{processOutput.document.fullName}" />
+						                	
+						                	<h:outputText id="docShortName" rendered="#{not empty processOutput.document.shortName}" value="#{processOutput.document.shortName}" />
+						                	<p:tooltip for="docShortName"  rendered="#{not empty processOutput.document.shortName}" value="#{processOutput.document.fullName}" />
+						                	
+						                	<h:outputText rendered="#{processOutput.update}" value=" (Update)"/>
+								       		
+								       		<p:commandLink action="#{showInfoManagedBean.showDocument}" rendered="#{not empty processOutput.document.fileName}">
+								        		<h:graphicImage  value="/resources/img/open_link_2.png" height="15px" width="15px"/>
+								        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoToShow}" value="#{processOutput.document.fileName}"/>
+								        	</p:commandLink>
+								        </p:treeNode>
+								    </p:tree>
+					            </p:panel>
+					    	</div>
+						</div>
+					</p:fieldset>
+				
+				<p:spacer width="10" height="10" />
+
+				
+				</p:repeat>
+			
+			</p:fieldset>
+			
+			<p:spacer width="10" height="10" />
+		</p:repeat>
+	</h:form>
+	
+</ui:composition>

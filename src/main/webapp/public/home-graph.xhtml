@@ -9,14 +9,9 @@
 	template="/private/layout/basic.xhtml">
 
 	<ui:define name="content">
-		<div class="ui-g">
-			<div class="ui-g-12">
-				<ui:include src="/private/menu.xhtml"/>
-			</div>
-			<div class="ui-g-12">
-				<ui:include src="/private/flat-process.xhtml"/>
-			</div>
-		</div>
+		<ui:include src="/private/menu-graph.xhtml"/>
+		<p:spacer/>
+		<ui:include src="/private/process-graph.xhtml"/>
 	</ui:define>
 
 </ui:composition>

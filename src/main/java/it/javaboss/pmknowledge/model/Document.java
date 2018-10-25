@@ -67,4 +67,9 @@ public class Document implements Identifiable, Hierarchy {
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
+	
+	@Override
+	public String toString() {
+		return this.fullName;
+	}
 }

@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+  	<p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+ 
+	<p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+	    <p:graphicImage value="/resources/img/ajaxloadingbar.gif" />
+	</p:dialog>
+
+	<h:form>
+		<p:fieldset id="menu">
+			<div class="ui-g">
+				<div class="ui-g-1">
+					<p:outputLabel value="Process" for="processCheckbox" />
+				</div>
+			 	<div class="ui-g-11">
+					<p:selectCheckboxMenu
+							id="processCheckbox"
+							value="#{menuManagedBean.selectedProcesses}"
+							converter="processConverter"
+							label="Process" 
+							multiple="true"
+							filter="true"
+							filterMatchMode="startsWith" 
+							style="width:95%"
+							>
+						<f:selectItems value="#{menuManagedBean.processes}"
+							var="pr" 
+							itemLabel="#{pr.knowledgeArea.shortName}: #{pr.name}"
+							itemValue="#{pr}" />
+					</p:selectCheckboxMenu>
+				</div>
+				<div class="ui-g-5"></div>
+				<div class="ui-g-1">
+					<p:commandButton update="processGraph" styleClass="ui-priority-primary" value="Submit" action="#{processGraphManagedBean.refresh}"/>
+				</div>
+				<div class="ui-g-1">
+					<p:commandButton update="processGraph,processCheckbox" styleClass="ui-priority-primary" value="Clear" action="#{processGraphManagedBean.clear}"/>
+				</div>
+			</div>
+		</p:fieldset>
+	</h:form>
+	
+</ui:composition>

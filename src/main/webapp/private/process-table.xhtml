@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:form id="processTableForm">
+		<p:fieldset id="processTable">
+			<table class="processTable">
+				<thead >
+					<tr>
+						<th></th>
+						<p:repeat value="#{processTableManagedBean.knowledgeAreas}" var="ka">
+							<th>
+								<h:outputText id="ka-header" value="#{ka.shortName}"/>
+								<p:tooltip for="ka-header"  value="#{ka.fullName}" />
+							</th>		
+						</p:repeat>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<p:repeat value="#{processTableManagedBean.processGroups}" var="pg">			
+						<tr>
+							<td style="height:100px;">
+								<h:outputText id="pg-header" value="#{pg.shortName}" styleClass="vertical-text"/>
+								<p:tooltip for="pg-header"  value="#{pg.fullName}" />
+							</td>
+
+							<p:repeat value="#{processTableManagedBean.knowledgeAreas}" var="ka">
+								<td style="height:100px;">
+									<p:repeat value="#{processTableManagedBean.getProcesses(ka,pg)}" var="process">
+										<div style="margin: 5px">
+											<p:commandLink value="#{process.name}" action="#{showIttoManagedBean.show}" style="text-decoration: none">
+												<f:setPropertyActionListener target="#{showIttoManagedBean.selectedProcess}" value="#{process}"/>
+											</p:commandLink>
+										</div>
+									</p:repeat>
+								</td>
+							</p:repeat>
+						</tr>
+					</p:repeat>
+				</tbody>
+			</table>
+		</p:fieldset>
+	</h:form>
+	
+</ui:composition>

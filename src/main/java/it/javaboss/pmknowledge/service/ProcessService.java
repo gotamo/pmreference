@@ -1,26 +1,21 @@
 package it.javaboss.pmknowledge.service;
 
+import java.util.List;
 import java.util.Optional;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import it.javaboss.pmknowledge.repository.ProcessRepository;
+import it.javaboss.pmknowledge.model.Document;
+import it.javaboss.pmknowledge.model.KnowledgeArea;
 import it.javaboss.pmknowledge.model.Process;
+import it.javaboss.pmknowledge.model.ProcessGroup;
 
-@Component
-@ManagedBean
-@ApplicationScoped
-public class ProcessService {
-	
-	@Autowired
-	ProcessRepository processRepository;
-	
-	public Optional<Process> findById(Long id) {
-		return processRepository.findById(id);
-	}
-
+public interface ProcessService {
+	public List<Process> findAllProcesses();
+	public List<KnowledgeArea> findAllKnowledgeAreas();
+	public List<Document> findAllDocuments();
+	public List<ProcessGroup> findAllProcessGroups();
+	public List<Process> findProcessByNameContains(String filter);
+	public List<Process> search( List<Long> processIds, List<Long> knowledgeAreaIds, List<Long> processGroupIds );
+	public List<ProcessGroup> findAllProcessGroupsByOrderByOrderAsc();
+	public List<KnowledgeArea> findKnowledgeAreasAllByOrderByOrderAsc();
+	public Optional<Process> findProcessById(long parseLong);
 }

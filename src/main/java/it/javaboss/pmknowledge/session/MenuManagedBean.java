@@ -4,41 +4,29 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import it.javaboss.pmknowledge.model.Document;
 import it.javaboss.pmknowledge.model.KnowledgeArea;
-import it.javaboss.pmknowledge.model.ProcessGroup;
 import it.javaboss.pmknowledge.model.Process;
-import it.javaboss.pmknowledge.repository.DocumentRepository;
-import it.javaboss.pmknowledge.repository.KnowledgeAreaRepository;
-import it.javaboss.pmknowledge.repository.ProcessGroupRepository;
-import it.javaboss.pmknowledge.repository.ProcessRepository;
+import it.javaboss.pmknowledge.model.ProcessGroup;
+import it.javaboss.pmknowledge.service.ProcessService;
 
 @SuppressWarnings("serial")
 @Component
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class MenuManagedBean implements Serializable {
 	
 	@Autowired
-	KnowledgeAreaRepository knowledgeAreaRepository;
-	
-	@Autowired
-	ProcessGroupRepository processGroupRepository;
-	
-	@Autowired
-	DocumentRepository documentRepository;
-	
-	@Autowired
-	ProcessRepository processRepository;
-	
+	ProcessService processService;
+		
 	private Long[] 	selectedKnowledgeAreaIds;
 	private Long[]  selectedProcessGroupIds;
-	private List<Long> 	selectedProcessIds;
+	private List<Process> 	selectedProcesses;
 	
 	//------------------------------------------------------------------------------------
 	
@@ -60,31 +48,32 @@ public class MenuManagedBean implements Serializable {
 	
 	//------------------------------------------------------------------------------------
 
-	public List<Long> getSelectedProcessIds() {
-		return selectedProcessIds;
+	public List<Process> getSelectedProcesses() {
+		return selectedProcesses;
 	}
-	public void setSelectedProcessIds(List<Long> selectedProcessIds) {
-		this.selectedProcessIds = selectedProcessIds;
+	public void setSelectedProcesses(List<Process> selectedProcessIds) {
+		this.selectedProcesses = selectedProcessIds;
 	}
 	
 	//------------------------------------------------------------------------------------
 	
 	public List<KnowledgeArea> getKnowledgeAreas() {
-		return knowledgeAreaRepository.findAll();
+		return processService.findAllKnowledgeAreas();
 	}
 	
 	public List<ProcessGroup> getProcessGroups() {
-		return processGroupRepository.findAll();
+		return processService.findAllProcessGroups();
+	}
+	
+	public List<Process> getProcesses() {
+		return processService.findAllProcesses();
 	}
 	
 	public List<Document> getDocuments() {
-		return documentRepository.findAll();
+		return processService.findAllDocuments();
 	}
 	
 	public List<Process> completeProcess(String filter) {
-		return processRepository.findByNameContains(filter);
+		return processService.findProcessByNameContains(filter);
 	}
-	
-	//------------------------------------------------------------------------------------
-
 }

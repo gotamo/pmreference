@@ -2,6 +2,8 @@ package it.javaboss.pmknowledge.utils;
 
 import java.util.List;
 
+import it.javaboss.pmknowledge.model.Identifiable;
+
 public class ArrayUtils {
 	
 	public static boolean isNotEmpty( Object[] array ) {
@@ -12,13 +14,12 @@ public class ArrayUtils {
 		return !isNotEmpty(array);
 	}
 	
-	@SuppressWarnings("rawtypes")
-	public static Long[] asListOfLong(List list) {
+	public static <T extends Identifiable> Long[] asListOfId(List<T> list) {
 		if ( list != null ) {
 			Long[] array = new Long[list.size()];
 			int i = 0;
-			for ( Object element : list ) {
-				array[i] = Long.parseLong( element.toString() );
+			for ( Identifiable element : list ) {
+				array[i] = element.getId();
 				i++;
 			}
 			return array;

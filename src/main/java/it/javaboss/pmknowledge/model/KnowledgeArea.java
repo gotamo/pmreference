@@ -7,11 +7,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table( name = "KNOWLEDGE_AREAS" )
-public class KnowledgeArea {
+public class KnowledgeArea implements Comparable<KnowledgeArea> {
 	private Long id;
 	private String shortName;
 	private String fullName;
-	private String description;
+	private Integer order;
 	
 	@Id
 	@Column(name="ID")
@@ -38,11 +38,21 @@ public class KnowledgeArea {
 		this.fullName = fullName;
 	}
 	
-	@Column(name="DESCRIPTION")
-	public String getDescription() {
-		return description;
+	@Column(name="ORDER")
+	public Integer getOrder() {
+		return order;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setOrder(Integer order) {
+		this.order = order;
+	}
+	
+	@Override
+	public int compareTo(KnowledgeArea o) {
+		return 0;
+	}
+	
+	@Override
+	public String toString() {
+		return this.fullName;
 	}
 }

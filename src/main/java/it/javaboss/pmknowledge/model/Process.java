@@ -19,7 +19,7 @@ import org.primefaces.model.TreeNode;
 
 @Entity
 @Table( name = "PROCESSES" )
-public class Process {
+public class Process implements Identifiable {
 	private Long 	id;
 	private String 	name;
 	
@@ -152,5 +152,10 @@ public class Process {
 		}
 		return root;
 		
+	}
+	
+	@Override
+	public String toString() {
+		return this.name;
 	}
 }
