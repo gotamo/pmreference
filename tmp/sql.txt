@@ -1,0 +1,9 @@
+use pmkb;
+select * 
+from processes p, process_inputs pi, documents d
+where p.id = pi.id_process and pi.id_document = pi.id;
+
+use pmkb;
+select * 
+from processes p, process_outputs po, documents d
+where po.id_process = p.id and po.id_document = d.id;

@@ -22,6 +22,7 @@ import org.primefaces.model.TreeNode;
 public class Process implements Identifiable {
 	private Long 	id;
 	private String 	name;
+	private Integer order;
 	
 	private ProcessGroup  processGroup;
 	private KnowledgeArea knowledgeArea;
@@ -94,6 +95,14 @@ public class Process implements Identifiable {
 	public void setProcessToolsAndTechniques(List<ProcessToolAndTechnique> processToolsAndTechniques) {
 		this.processToolsAndTechniques = processToolsAndTechniques;
 	}	
+	
+	@Column(name="ORDER")
+	public Integer getOrder() {
+		return order;
+	}
+	public void setOrder(Integer order) {
+		this.order = order;
+	}
 	
 	//---------------------------------------------------------------------------------------------
 	

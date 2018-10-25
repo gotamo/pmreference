@@ -19,6 +19,7 @@ import org.primefaces.model.diagram.overlay.ArrowOverlay;
 import org.primefaces.model.diagram.overlay.LabelOverlay;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import it.javaboss.pmknowledge.model.Document;
 import it.javaboss.pmknowledge.model.Identifiable;
@@ -153,15 +154,15 @@ public class ProcessGraphManagedBean implements Serializable {
 	private Connection createConnection( Element elementStart, Element elementEnd, List<Document> documents ) {
 		if ( !documents.isEmpty() ) {
 
-			String label = null;
+			String label = "";
 			String separator = "";
 			for ( Document document : documents ) {
-				if ( document.getShortName() != null ) {
-					label = separator + document.getShortName();
+				if ( !StringUtils.isEmpty( document.getShortName() ) ) {
+					label += separator + document.getShortName();
 				} else {
-					label = separator + document.getFullName();
+					label += separator + document.getFullName();
 				}
-				separator = " | ";
+				separator = "<br/>";
 			}
 			
 			EndPoint endpointStart = new BlankEndPoint( EndPointAnchor.CONTINUOUS_BOTTOM );
@@ -211,12 +212,12 @@ public class ProcessGraphManagedBean implements Serializable {
     }
 	
 	private String posX( Process process ) {
-		Integer pos = 20 * ( process.getKnowledgeArea().getOrder() - 1 ) + 10;
+		Integer pos = 20 * ( process.getKnowledgeArea().getOrder() - 1 ) + 5 * ( process.getOrder() % 2 );
 		return pos.toString() + "em";
 	}
 	
 	private String posY( Process process ) {
-		Integer pos = 20 * ( process.getProcessGroup().getOrder()  - 1 ) + 3;
+		Integer pos = 20 * ( process.getOrder()  - 1 ) + 3;
 		return pos.toString() + "em";
 	}
 }
