@@ -37,15 +37,27 @@ public class ShowInfoManagedBean implements Serializable {
 	private String toolPath; 
 	
 	private String infoToShow;
+	
+	private Long infoId;
 
+	//---------------------------------------------------------------------------------------------
+	
 	public void setInfoToShow(String infoToShow) {
 		this.infoToShow = infoToShow;
 	}
-	
 	public String getInfoToShow() {
 		return infoToShow;
 	}
+	
+	public Long getInfoId() {
+		return infoId;
+	}
+	public void setInfoId(Long infoId) {
+		this.infoId = infoId;
+	}
 
+	//---------------------------------------------------------------------------------------------
+	
 	private String buildFileName(String path) throws MalformedURLException {
 		String browserLocale = FacesContext.getCurrentInstance().getViewRoot().getLocale().getLanguage();
 

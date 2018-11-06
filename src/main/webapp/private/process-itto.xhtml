@@ -17,6 +17,7 @@
 			        	<p:commandLink action="#{showInfoManagedBean.showDocument}" rendered="#{not empty processInput.document.fileName}">
 			        		<h:graphicImage  value="/resources/img/open_link_2.png" height="15px" width="15px"/>
 			        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoToShow}" value="#{processInput.document.fileName}"/>
+			        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoId}" value="#{processInput.document.id}"/>
 			        	</p:commandLink>
 			        </p:treeNode>
 			    </p:tree>
@@ -50,6 +51,7 @@
 			       		<p:commandLink action="#{showInfoManagedBean.showDocument}" rendered="#{not empty processOutput.document.fileName}">
 			        		<h:graphicImage  value="/resources/img/open_link_2.png" height="15px" width="15px"/>
 			        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoToShow}" value="#{processOutput.document.fileName}"/>
+			        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoId}" value="#{processOutput.document.id}"/>
 			        	</p:commandLink>
 			        </p:treeNode>
 			    </p:tree>

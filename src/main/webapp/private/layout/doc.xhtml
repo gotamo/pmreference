@@ -17,19 +17,44 @@
 </h:head>
 
 <h:body>
-	<div class="ui-g">
-		<div class="ui-g-12">
-	    	<h2><ui:insert name="title"/></h2>
-	    </div>
-    	<div class="ui-g-12, text-justify">
-   			<ui:insert name="content" />
-    	</div>
-    	<div class="ui-g-12">
-    		<h2><h:outputText value="#{msg['doc.link.title']}"/></h2>
-    		<ui:insert name="link">
-    			N/A
-    		</ui:insert>
-    	</div>
-	</div>
+	<h:form>
+		<div class="ui-g">
+			<div class="ui-g-12">
+		    	<h2><ui:insert name="title"/></h2>
+		    </div>
+	    	<div class="ui-g-12, text-justify">
+	   			<ui:insert name="content" />
+	    	</div>
+	    	<div class="ui-g-12">
+	    		<h2><h:outputText value="#{msg['doc.link.title']}"/></h2>
+	    		<ui:insert name="link">
+	    			N/A
+	    		</ui:insert>
+	    	</div>
+	    	<br/>
+	    	<table class="minimalistBlack">
+	    		<thead>
+					<tr>
+						<th><h:outputText value="#{msg['doc.output.title']}"/></th>
+						<th><h:outputText value="#{msg['doc.input.title']}"/></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<ui:repeat var="process" value="#{processManagedBean.processProducingDocument}">
+				    			<h:outputText value="#{process.name}"/><br/>
+				    		</ui:repeat>
+						</td>
+						<td>
+							<ui:repeat var="process" value="#{processManagedBean.processConsumingDocument}">
+				    			<h:outputText value="#{process.name}"/><br/>
+				    		</ui:repeat>
+						</td>
+					</tr>
+				</tbody>
+	    	</table>
+		</div>
+ 	</h:form>
 </h:body>
 </html>

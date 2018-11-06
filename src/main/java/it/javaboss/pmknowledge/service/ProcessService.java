@@ -17,5 +17,7 @@ public interface ProcessService {
 	public List<Process> search( List<Long> processIds, List<Long> knowledgeAreaIds, List<Long> processGroupIds );
 	public List<ProcessGroup> findAllProcessGroupsByOrderByOrderAsc();
 	public List<KnowledgeArea> findKnowledgeAreasAllByOrderByOrderAsc();
-	public Optional<Process> findProcessById(long parseLong);
+	public Optional<Process> findProcessById(Long id);
+	public List<Process> findProcessWithInput(Long docId);
+	public List<Process> findProcessWithOutput(Long docId);
 }

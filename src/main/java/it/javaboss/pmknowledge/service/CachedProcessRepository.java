@@ -93,8 +93,20 @@ public class CachedProcessRepository implements ProcessService {
 	}
 
 	@Override
-	public Optional<Process> findProcessById(long id) {
+	public Optional<Process> findProcessById(Long id) {
 		return processes.stream().filter( p -> p.getId().equals( id ) ).findFirst();
 	}
+
+	@Override
+	public List<Process> findProcessWithInput(Long docId) {
+		return processRepository.findByProcessInputs_Document_Id( docId );
+	}
+
+	@Override
+	public List<Process> findProcessWithOutput(Long docId) {
+		return processRepository.findByProcessOutputs_Document_Id( docId );
+	}
+
+	
 	
 }
