@@ -12,18 +12,42 @@
     color: #ffffff;
 }
 
-.ui-diagram-success {
+.ui-diagram-pg-in {
+    background-color: #3CB371;
+    color: #ffffff;
+    border-color: #ADFF2F;
+}
+
+.ui-diagram-pg-pl {
     background-color: #9CB071;
     color: #ffffff;
     border-color: #7ab02c;
 }
 
-.ui-diagram-fail {
+.ui-diagram-pg-ex {
+    background-color: #4682B4;
+    color: #ffffff;
+    border-color: #B0C4DE;
+}
+
+.ui-diagram-pg-mc {
     background-color: #C34A2C;
     color: #ffffff;
 }
 
+.ui-diagram-pg-cl {
+    background-color: #DAA520;
+    color: #ffffff;
+    border-color: #F4A460;
+}
+
 .flow-label {
     font-size: 13px;
-    color: #816A51;
+    color: #000000; 
+}
+
+.flow-arrow {
+	strokeStyle: #C7B097;
+	lineWidth:3;
+	
 }

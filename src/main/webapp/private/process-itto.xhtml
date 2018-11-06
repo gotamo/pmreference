@@ -40,9 +40,9 @@
 	    	 <p:panel id="output" header="Ouptut" style="width:100%">
 				<p:tree value="#{process.processOutputTree}" var="processOutput" style="width: 100%; border: 0" >
 			        <p:treeNode>
-			            <h:outputText rendered="#{empty processOutput.document.shortName}" value="#{processOutput.document.fullName}" />
+			            <h:outputText rendered="#{empty processOutput.document.shortName}" value="#{processOutput.document.fullName} " />
 	                	
-	                	<h:outputText id="docShortName" rendered="#{not empty processOutput.document.shortName}" value="#{processOutput.document.shortName}" />
+	                	<h:outputText id="docShortName" rendered="#{not empty processOutput.document.shortName}" value="#{processOutput.document.shortName} " />
 	                	<p:tooltip for="docShortName"  rendered="#{not empty processOutput.document.shortName}" value="#{processOutput.document.fullName}" />
 	                	
 	                	<h:outputText rendered="#{processOutput.update}" value=" (Update)"/>

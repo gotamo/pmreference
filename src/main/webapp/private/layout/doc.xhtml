@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title><ui:insert name="title"/></title>
+	<link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/img/pmr-favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet library="css" name="pf.css" />
+	<h:outputStylesheet library="css" name="default.css" />
+	<h:outputStylesheet library="css" name="common.css" />
+	<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"/>
+</h:head>
+
+<h:body>
+	<div class="ui-g">
+		<div class="ui-g-12">
+	    	<h2><ui:insert name="title"/></h2>
+	    </div>
+    	<div class="ui-g-12, text-justify">
+   			<ui:insert name="content" />
+    	</div>
+    	<div class="ui-g-12">
+    		<h2><h:outputText value="#{msg['doc.link.title']}"/></h2>
+    		<ui:insert name="link">
+    			N/A
+    		</ui:insert>
+    	</div>
+	</div>
+</h:body>
+</html>

@@ -2,6 +2,7 @@
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
@@ -31,6 +32,13 @@
 	    			<p:menuitem value="Table" url="/public/home-table.xhtml" icon="ui-icon-newwin" />
 		    		<p:menuitem value="Graph" icon="ui-icon-image" url="/public/home-graph.xhtml" />
 		    		<p:menuitem value="Search" url="/public/home-search.xhtml" icon="ui-icon-search"/>
+		    		<f:facet name="options">
+		    			If you appreciate please 
+		    			<a  target="_blank"
+		    				href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=massimoromano@hotmail.com&amp;amp;item_name=Friends+of+the+Park&amp;item_number=Fall+Cleanup+Campaign&amp;amount=1%2e00&amp;currency_code=EUR">
+		    				<p:graphicImage alt="Donate" url="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"/>
+		    			</a>
+		    		</f:facet>
 	    		</p:menubar>
     		</h:form>
     	</div>

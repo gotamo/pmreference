@@ -23,7 +23,7 @@ public class ShowInfoManagedBean implements Serializable {
 	private static Map<String,Object> options = new HashMap<String, Object>();
 	static {
 		 options.put("modal", true);
-		 options.put("width", "70%");
+		 options.put("width", "60%");
 	     options.put("height", "400");
 	     options.put("contentWidth", "100%");
 	     options.put("contentHeight", "100%");

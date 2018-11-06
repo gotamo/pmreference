@@ -1,33 +1,72 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	template="/private/layout/doc.xhtml">
 
-	<h:head>
-		<title>Business Case</title>
-	</h:head>
+	<ui:define name="title">Business Case</ui:define>
 
-	<h:body>
+	<ui:define name="content">
+		Il business case è il documento centrale del ciclo di vita di un progetto o programma. Uno dei motivi per cui si suggerisce un ciclo 
+		di vita suddiviso in fasi, tranche di programma e/o fasi di progetto è quella di permettere di prendere decisioni di tipo go/no go 
+		che consentano di evitare investimenti sprecati. 
+		Queste decisioni sono prese principalmente sulla base della fattibilità del business case.
+		Il busine case può inlcudere una valutazione del progetto basata su metodi di selezione dei progetti. Tali metodi si suddividono in due categorie:
+		<ul>
+			<li><strong>Constrained optimization methods</strong>: programmazione lineare, non lineare, dinamica o multi obiettivo.</li>
+			<li><strong>Benefit measurements methods</strong>: sono metodi di misurazione del beneficio economico.</li>
+		</ul>
+		
+		<h2>Benefit Measurements Method</h2>
+		
+		<h4>Benefit Cost Ratio (BCR)</h4>
+		Ottenuto come rapporto ricavi su costi o benefici su costi:
+		
+		$$BCR = {ricavi \over costi} = {benefici \over costi}$$
+		
+		I ricavi sono il <strong>fatturato</strong> e non i <strong>profitti</strong> o l'<strong>utile</strong> 
+		che sono valori netti:
+		
+		$$fatturato = costo + profitti$$
+		
+		Se <strong>BCR</strong> &gt; 1 (ovvero ricavi &gt; costi) allora il progetto è conveniente. Maggiore è tale rapporto maggiore è la convenienza.
+		
+		<h4>Payback Period (PBP)</h4>
+		Il <strong>PBP</strong> è il periodo di tempo necessario per recuperare l'investimento iniziale fatto. Tale indicatore non tiene conto della svalutazione.
+		Il progetto è tanto più conveniente quanto più il PBP è basso.
+		
+		<h4>Discount Cash Flow (DCF)</h4>
+		E' il valore attualizzato (Present Value <strong>PV)</strong> dei benefici futuri (Future Value <strong>FV)</strong> o valore ad oggi del futuro cash flow:
+		
+		$$PV = {FV \over (1 + i)^n} = FV \times K_n$$
+		
+		dove:
+		<ul>
+			<li><strong>n</strong> = numero di periodo</li>
+			<li><strong>i</strong> = tasso di sconto (discount rate)</li>
+			<li><strong>K<sub>n</sub></strong> = fattore di sconto (discount factor)</li>
+		</ul>
+		
+		Maggiore è il <strong>PV</strong> più favorevole è il progetto.
+		
+		<h4>Net Present Value (NPV)</h4>
+		Il <strong>NPV</strong> si ottiene calcolando la differenza attualizzata (<strong>DCF</strong>) tra i benefici ed i costi.
+		Maggiore è il suo valore, più conveniente è il progetto.
+		
+		<h4>Tasso Interno di Rendimento (IRR)</h4>
+		E' il tasso di sconto (termine <strong>i</strong> in <strong>DCF</strong>) che determina un <strong>NPV</strong> nullo.
+		Scelgo progetti con IRR più alto.
+		
+	</ui:define>
 	
-		<h2>Business case</h2>
-		<p align="justify">Il business case è il documento centrale del
-			ciclo di vita di un progetto o programma. Uno dei motivi per cui si
-			suggerisce un ciclo di vita suddiviso in fasi, tranche di programma
-			e/o fasi di progetto è quella di permettere di prendere decisioni di
-			tipo go/no go che consentano di evitare investimenti sprecati. Queste
-			decisioni sono prese principalmente sulla base della fattibilità del
-			business case.</p>
-	
-		<h3>Link Esterni</h3>
-		<a href="https://www.imlearning.it/cose-business-case/" target="_blank">Che
-			cos’è il Business Case?</a>
-		<br />
-		<a
-			href="http://www.humanwareonline.com/project-management/center/business-case/"
-			target="_blank">Business case: costruzione ed utilizzo</a>
-	
-	</h:body>
+	<ui:define name="link">	
+		<a href="https://www.imlearning.it/cose-business-case/" target="_blank" rel="noopener">Che cos'è il Business Case?</a> <br /> 
+		<a href="http://www.humanwareonline.com/project-management/center/business-case/" target="_blank" rel="noopener">Business case: costruzione ed utilizzo</a>
+	</ui:define>
 
-</html>
+</ui:composition>

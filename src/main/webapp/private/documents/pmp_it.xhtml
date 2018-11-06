@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">
+		Project Management Plan (PMP)
+	</ui:define>
+	
+	<ui:define name="content">
+
+		Il Project Management Plan o piano di gestione del progetto è un documento formale approvato che definisce le modalità con cui il progetto 
+		viene eseguito, monitorato, controllato e chiuso. 
+		Esso include una <b>baseline</b> di riferimento comprensiva di quanto deve essere realizzato dal progetto in termini di 
+		<b>ambito</b>, <b>tempi</b> e <b>costi</b>, in modo che si possa misurare e confrontare 
+		l'esecuzione del progetto con tali riferimenti e gestire le relative prestazioni.
+		Il PMP può essere modificato o elaborato progressivamente a seguito di una richiesta di modifica approvata dal processo 
+		di Perform Integrated Change Control.
+
+		I progetti in un programma dovrebbero sviluppare un PMP coerente con Program management Plan.
+
+		
+		<h2>Elementi del PMP</h2>
+
+		Il PMP si compone di un piano ausiliario per ogni area di conoscenza, ad eccezione dello Scope Management i cui piani ausiliari sono due, 
+		più le baseline generate per ambito, tempi e costi, più una serie di componenti aggiuntive:
+		<ul>
+			<li>Subsidiary management Plan
+				<ul>
+					<li>Scope Management Plan</li>
+					<li>Requirements Management Plan</li>
+					<li>Schedule Management Plan</li>
+					<li>Cost Management Plan</li>
+					<li>Quality Management Plan</li>
+					<li>Resource Management Plan</li>
+					<li>Communications Management Plan</li>
+					<li>Risk Management Plan</li>
+					<li>Procurement Management Plan</li>
+					<li>Stakeholder Management Plan</li>
+				</ul>
+			</li>
+			<li>Baseline
+				<ul>
+					<li>Scope Baseline</li>
+					<li>Schedule Baseline</li>
+					<li>Cost Baseline</li>
+				</ul>
+			</li>
+			<li>Additional Component
+				<ul>
+					<li>Change Management Plan</li>
+					<li>Configuration Management Plan</li>
+					<li>Performance Measurement Baseline (PMB)</li>
+					<li>Project Life Cycle</li>
+					<li>Development Approach</li>
+					<li>Management Reviews</li>
+				</ul>
+			</li>
+				
+		</ul>
+		
+		I piani ausiliari e tutte le altre componenti divengono parte del PMP quando tutti sono completati.<br/>
+		
+		Il PMB (Performance Measurement Baseline) è una baseline integrata di ambito, schedulazione e 
+		costi utilizzata per il confronto ai fini di gestione, misurazione e controllo del progetto.
+	
+	</ui:define>
+	
+	<ui:define name="link">
+		<a href="http://2020projectmanagement.com/resources/project-documentation/the-project-management-plan-pmp" target="_blank">
+			The Project Management Plan (PMP)
+		</a>
+		<br/>
+		<a href="https://www.simplilearn.com/what-is-a-project-management-plan-article" target="_blank">
+			Understanding the Project Management Plan
+		</a>
+	</ui:define>
+</ui:composition>

@@ -6,6 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.springframework.util.StringUtils;
 
 @Entity
 @Table( name = "DOCUMENTS" )
@@ -71,5 +74,14 @@ public class Document implements Identifiable, Hierarchy {
 	@Override
 	public String toString() {
 		return this.fullName;
+	}
+	
+	@Transient
+	public String getShortNameFirst() {
+		if ( !StringUtils.isEmpty( this.shortName ) ) {
+			return this.shortName;
+		} else {
+			return this.fullName;
+		}
 	}
 }
