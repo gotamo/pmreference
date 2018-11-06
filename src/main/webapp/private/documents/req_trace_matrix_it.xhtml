@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">Requirement Traceability Matrix (RTM)</ui:define>
+	
+	<ui:define name="content">
+		La Matrice di Tracciamento dei Requisiti o Requirement Traceability Matrix (RTM) è uno strumento per garantire che l'ambito, 
+		i requisiti e i risultati del progetto rimangano inalterati rispetto alla baseline di riferimento. In questo senso, traccia i risultati 
+		del progetto conservando la storia del requisito, dall'iniziazione del progetto fino al suo completamento. 
+		In realtà, la matrice di tracciabilità dei requisiti è una tabella che cattura tutti i requisiti utente e di sistema necessari per lo sviluppo del sistema.
+		<br/>
+		Esso ha la sua rilevanza sia nelle metodologie di sviluppo tradizionali (waterfall) che moderne (agili). 
+		Nell'approccio tradizionale, aiuta a tracciare i requisiti con i test eseguiti al collaudo per verificare che effettivamente siano soddisfatti. 
+		Nella metodologia SCRUM, viene utilizzato per catturare il collegamento delle storie utente con il product backlog e/o lo sprint backlog.
+		
+		<h3>Elemeneti di una RTM</h3>
+		Non esiste un unico formato univoco per la RTM. I progetti creano e utilizzano RTM secondo i loro standard e necessità organizzative, 
+		ma in generale si riscontra che una buona RTM contiene uno o più dei seguenti elementi:
+		<ul>
+			<li><strong>Identificativo</strong> - identificativo univoco del requisito.</li>
+			<li><strong>Tipo</strong> - tipologia del requisito, raggruppa i requisiti per funzione.</li>
+			<li><strong>Descrizione</strong> - nome e breve descrizione del requisito.</li>
+			<li><strong>Source</strong> - identificativo di chi ha richiesto il requisito.</li>
+			<li><strong>Owner</strong> - responsabile del monitoraggio del requisito.</li>
+			<li><strong>Priorità</strong> - priorità del requisito.</li>
+			<li><strong>WBS Deliverable</strong> - in quale deliverable è incluso il requisito.</li>
+			<li><strong>Stato</strong> - stato di realizzazione.</li>
+			<li><strong>Commenti</strong> - eventuali commenti.</li>
+			<li><strong>Tracciamento</strong> - storia delle modifiche al requisito.</li>
+		</ul>
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="https://en.wikipedia.org/wiki/Requirements_traceability" target="_blank">Requirements traceability</a><br/>
+		<a href="https://project-management.com/requirements-traceability-matrix-rtm/" target="_blank">Requirements Traceability Matrix – RTM</a><br/>
+	</ui:define>
+</ui:composition>

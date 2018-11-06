@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">Requirement Documentation</ui:define>
+	
+	<ui:define name="content">
+		I progetti non possono essere implementati senza i requisiti appropriati. La documentazione dei requisiti nella gestione del progetto 
+		descrive come ciascun requisito soddisfa le esigenze aziendali del progetto. 
+	
+		Prima di creare una baseline, i requisiti non devono presentare ambiguità, ovvero devono essere <strong>misurabili</strong>, <strong>testabili</strong>, 
+		<strong>tracciabili</strong>, <strong>completi</strong>, <strong>coerenti</strong> e <strong>accettabili</strong> per i principali stakeholder 
+		(unambiguous, traceable, complete, consistent e acceptable).
+
+		<h3>Requisito S.M.A.R.T.</h3>
+		Si definisce S.M.A.R.T. un requisito:
+		<ul>
+			<li><strong>S</strong>pecifico, cioè che non lascia spazio ad ambiguità;</li>
+			<li><strong>M</strong>isurabile senza equivoci e verificabile in fase di controllo;</li>
+			<li>Raggiungibile (<strong>A</strong>chievable), poiché un obiettivo non raggiungibile demotiva all'azione allo stesso modo di uno facilmente raggiungibile;</li>
+			<li><strong>R</strong>ilevante da un punto di vista organizzativo, cioè coerente con la mission aziendale;</li>
+			<li>Definito nel Tempo (<strong>T</strong>ime boxed).	</li>
+		</ul>
+		
+		I requisiti possono essere di diverso tipo:
+		<ul>
+			<li>business requirement - ovvero di alto livello;</li>
+			<li>solution requirement - che a loro volta si distinguono in funzionali e non funzionali;</li>
+			<li>transition requirement - definiscono come si realizza la transizione dal "vecchio" al "nuovo";</li>
+			<li>project requirement - requisiti relativi alla gestione del progetto;</li>
+			<li>quality requirement - reqisiti di qualità.</li>
+		</ul>
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="https://en.wikipedia.org/wiki/Product_requirements_document" target="_blank">Product requirements document</a><br/>
+		<a href="https://edward-designer.com/web/project-requirements-vs-project-scope-for-pmp-exam/" target="_blank">Project Requirements and Project Scope</a><br/>
+	</ui:define>
+</ui:composition>
