@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">Change Request</ui:define>
+	
+	<ui:define name="content">
+		
+		Una richiesta di modifica (o Change Request) può essere definita come una qualsiasi richiesta inoltrata al Change Control Board (CCB) o a un 
+		qualsiasi altro gruppo di controllo delle modifiche. Queste richieste possono consistere in modifiche che vanno da modifiche minori, 
+		a modifiche significative che alterano drasticamente il progetto. Tuttavia, in genere le richieste di modifica formale riguardano
+		modifiche più significative, mentre quelle meno significative sono apportate a livello di gestione del progetto. Inoltre in caso di necessità/urgenza 
+		viene dato al Project Manager l'autorità di approvare i change utilizzando meccanismi automatici del Change Control Board (CCB).
+		<br/>
+		Una tipica change request può richiedere una modifica a un certo numero di aree del progetto, compresa l'espansione o riduzione dell'ambito del progetto,
+		richieste di modifica di politiche, procedure, piani o processi, e le richieste di modifica delle spese e le richieste di aggiornamento della pianificazione. 
+		<br/>
+		Le richieste di modifica possono essere fatte direttamente o indirettamente e possono essere avviate internamente o esternamente. 
+		Una costante nella maggior parte dei processi di richiesta di modifica è che la richiesta deve essere formulata in modo formale, 
+		tramite una <strong>proposta scritta</strong> o un modulo di richiesta, e che le modifiche <strong>non devono essere implementate</strong> 
+		finché non vengono formalmente approvate.
+		<br/>
+		
+		Le richieste di modifica possono essere <strong>approvate</strong>, <strong>rigettate</strong> o <strong>sospese</strong>. 
+		Le possibili azioni generate dal processo di approvazione delle modifiche sono:
+		<ul>
+			<li><strong>Azione correttiva</strong> - applicata nel caso di un problema che <strong>si è verificato</strong> ed è finalizzata a riallineare le prestazioni del progetto
+			con il piano di Project Management.</li>
+			<li><strong>Azione preventiva</strong> - applicata nel caso in cui il problema <strong>non si è ancora verificato</strong> ed è finalizzata a garantire che l'andamento 
+			futuro del progetto sia allineato con il piano di project Management.</li>
+			<li><strong>Correzione di un difetto</strong> - attività volta a modificare un prodotto o un componente non conforme alle specifiche.</li>
+			<li><strong>Aggiornamenti</strong> - modifiche a documenti o piani di progetto sottoposti a controllo formale.</li>
+		</ul>
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="https://www.izenbridge.com/blog/integrated-change-control-sequence-of-change-request/" target="_blank">Integrated Change Control – Sequence Of Change Request</a><br/>
+		<a href="https://magoosh.com/pmp/change-control-change-requests-ccb-pmp-concepts/" target="_blank">Change Control, Change Requests, and the CCB: PMP Concepts</a><br/>
+	</ui:define>
+</ui:composition>
