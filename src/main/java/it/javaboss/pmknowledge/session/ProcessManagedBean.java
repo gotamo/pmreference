@@ -9,8 +9,9 @@ import javax.faces.bean.SessionScoped;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import it.javaboss.pmknowledge.model.ProcessInput;
+import it.javaboss.pmknowledge.model.ProcessOutput;
 import it.javaboss.pmknowledge.service.ProcessService;
-import it.javaboss.pmknowledge.model.Process;
 
 @SuppressWarnings("serial")
 @Component
@@ -23,11 +24,11 @@ public class ProcessManagedBean implements Serializable {
 	@Autowired
 	ShowInfoManagedBean showInfoManagedBean;
 	
-	public List<Process> getProcessProducingDocument() {
-		return processService.findProcessWithOutput( showInfoManagedBean.getInfoId() );
+	public List<ProcessOutput> getProcessProducingDocument() {
+		return processService.findProcessOutputByDocumentId( showInfoManagedBean.getInfoId() );
 	}
 	
-	public List<Process> getProcessConsumingDocument() {
-		return processService.findProcessWithInput( showInfoManagedBean.getInfoId() );
+	public List<ProcessInput> getProcessConsumingDocument() {
+		return processService.findProcessInputByDocumentId( showInfoManagedBean.getInfoId() );
 	}
 }

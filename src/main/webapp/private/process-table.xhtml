@@ -31,7 +31,9 @@
 								<td style="height:100px;">
 									<p:repeat value="#{processTableManagedBean.getProcesses(ka,pg)}" var="process">
 										<div style="margin: 5px">
-											<p:commandLink value="#{process.name}" action="#{showIttoManagedBean.show}" style="text-decoration: none">
+											<p:commandLink value="#{process.name}" action="#{showIttoManagedBean.show}" 
+													onmouseover="this.style.color='DodgerBlue';" onmouseout="this.style.color='black';"
+													style="text-decoration: none">
 												<f:setPropertyActionListener target="#{showIttoManagedBean.selectedProcess}" value="#{process}"/>
 											</p:commandLink>
 										</div>

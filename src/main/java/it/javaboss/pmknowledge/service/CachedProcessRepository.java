@@ -10,9 +10,13 @@ import it.javaboss.pmknowledge.model.Document;
 import it.javaboss.pmknowledge.model.KnowledgeArea;
 import it.javaboss.pmknowledge.model.Process;
 import it.javaboss.pmknowledge.model.ProcessGroup;
+import it.javaboss.pmknowledge.model.ProcessInput;
+import it.javaboss.pmknowledge.model.ProcessOutput;
 import it.javaboss.pmknowledge.repository.DocumentRepository;
 import it.javaboss.pmknowledge.repository.KnowledgeAreaRepository;
 import it.javaboss.pmknowledge.repository.ProcessGroupRepository;
+import it.javaboss.pmknowledge.repository.ProcessInputRepository;
+import it.javaboss.pmknowledge.repository.ProcessOutputRepository;
 import it.javaboss.pmknowledge.repository.ProcessRepository;
 
 @Component
@@ -37,7 +41,12 @@ public class CachedProcessRepository implements ProcessService {
 	
 	@Autowired
 	ProcessRepository processRepository;
+	
+	@Autowired
+	ProcessOutputRepository processOutputRepository;
 
+	@Autowired
+	ProcessInputRepository processInputRepository;
 	
 	
 	@Override
@@ -98,13 +107,13 @@ public class CachedProcessRepository implements ProcessService {
 	}
 
 	@Override
-	public List<Process> findProcessWithInput(Long docId) {
-		return processRepository.findByProcessInputs_Document_Id( docId );
+	public List<ProcessInput> findProcessInputByDocumentId(Long id) {
+		return processInputRepository.findByDocument_Id( id );
 	}
 
 	@Override
-	public List<Process> findProcessWithOutput(Long docId) {
-		return processRepository.findByProcessOutputs_Document_Id( docId );
+	public List<ProcessOutput> findProcessOutputByDocumentId(Long id) {
+		return processOutputRepository.findByDocument_Id( id );
 	}
 
 	

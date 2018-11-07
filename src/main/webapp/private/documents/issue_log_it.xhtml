@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">Issue Log</ui:define>
+	
+	<ui:define name="content">
+		I'Issue Log (o Issue Register) è un documento di progetto in cui tutti i problemi che influiscono negativamente sul progetto vengono registrati 
+		e tracciati. Tale documento fornisce un utile strumento per segnalare e comunicare tutto ciò che accade all'interno del progetto. 
+		È molto simile a un ticket di supporto creato in un help desk: il problema viene registrato e viene fornito un identificatore, 
+		quindi viene monitorato fino alla risoluzione.
+		<br/>
+		Le issue sono problemi, lacune, incoerenze o conflitti che si verificano in modo imprevisto durante il ciclo di vita di un progetto. 
+		Esse possono includere problemi con lo staff o i fornitori, guasti tecnici, mancanza di materiale o qualsiasi altro problema 
+		che abbia un impatto negativo sul progetto. Se i problemi rimangono irrisolti, il project manager potrebbe dover affrontare conflitti, 
+		ritardi o errori non necessari nella produzione dei risultati finali. 
+		<br/>
+		<strong>I problemi possono anche avere un impatto sulle aspettative degli stakeholder nel progetto.</strong>
+
+		<h3>Elementi Costitutivi</h3>
+		Le informazioni generalmente incluse in un Issue Log sono:
+		<ul>
+			<li><strong>Issue Name</strong> - nome assegnato all'issue;</li>
+			<li><strong>Issue Type</strong> - categoria di appartenenza dell'issue. Tipiche categorie sono: technical, resource, third party, etc.</li>
+			<li><strong>Reported By</strong> - persona che ha sollevato il problema.</li>
+			<li><strong>Reported Date</strong> - data di registrazione del problema.</li>
+			<li><strong>Description</strong> - descrizione dettagliata dell'issue. Può includere l'impatto che il problema potrebbe avere sul progetto e sugli obiettivi del progetto che potrebbero essere interessati da questo problemo.</li>
+			<li><strong>Priority</strong> - priorità assegnata all'issue. Valori tipici sono alta, media o bassa, in base all'impatto che potrebbe avere sul progetto.</li>
+			<li><strong>Assigned To</strong> - nome della persona o del team responsabile del problema. Può o meno essere responsabile della sua risoluzione, ma certamente è responsabile del suo monitoraggio e di assicurare che venga gestito in base alla sua priorità.</li>
+			<li><strong>Target Resolution Date</strong> - deadline er la risoluzione del problema.</li>
+			<li><strong>Status</strong> - stato della issue, e.g. aperta, in corso di plementazione, risolta.</li>
+			<li><strong>Final Solution</strong> - breve descrizione della soluzione adottata per risolvere il problema.</li>
+		</ul>
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="http://www.humanwareonline.com/project-management/center/registro-dei-problemi-issue-log/" target="_blank">Registro dei problemi (issue log)</a><br/>
+		<a href="https://www.simplilearn.com/issue-log-concepts-article" target="_blank">What is an Issue Log?</a><br/>
+	</ui:define>
+</ui:composition>
