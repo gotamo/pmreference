@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">Change Management Plan</ui:define>
+	
+	<ui:define name="content">
+		Un piano di gestione delle modifiche (o Change Management Plan) documenta come le modifiche saranno monitorate e controllate, definendo 
+		il processo utilizzato per la gestione dei cambiamenti sul progetto.
+		<br/>
+		Il piano di Change Management specificherà in che modo vengono richieste le modifiche (generalmente tramite un form di richiesta), 
+		quali informazioni saranno necessarie per formularla e chi può generare tale richiesta.
+		Inoltre indicherà a chi deve essere inviata la richiesta di modifica e il processo che seguirà al momento dell'invio, nonchè 
+		il processo che il <strong>Change Control Board</strong> (CBC) dovrà adottare per valutare il cambiamento. 
+		Infine definirà i ruoli e le responsabilità degli appartenenti al CBC, l'agenda in cui si riunirà il comitato e le tecniche adottate per 
+		il raggiungimento della decizione finale.  
+		
+		<h3>Differenza con il Configuration Management Plan</h3>
+		In sostanza, un piano di gestione delle modifiche è un piano generico che guida il Project Manager nell'apportare 
+		qualsiasi tipo di modifica al progetto, specialmente quelli che possono influire la baseline (ambito, tempo e costi), 
+		mentre un piano di gestione della configurazione guida solo nell'apportare modifiche specifiche nella configurazione del prodotto.
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="https://pmstudycircle.com/2012/01/configuration-management-vs-change-management/" target="_blank">Configuration Management vs Change Management</a><br/>
+		<a href="https://blog.masterofproject.com/change-management-process/" target="_blank">Learn the 8 Steps of Change Management Process</a><br/>
+		<a href="https://www.projectmanager.com/training/how-to-make-a-change-management-plan" target="_blank">How to Make a Change Management Plan</a><br/>
+	</ui:define>
+</ui:composition>

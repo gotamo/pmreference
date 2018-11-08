@@ -116,6 +116,11 @@ public class CachedProcessRepository implements ProcessService {
 		return processOutputRepository.findByDocument_Id( id );
 	}
 
+	@Override
+	public Document findDocumentById(Long id) {
+		return documentRepository.findById(id).orElse(null);
+	}
+
 	
 	
 }
