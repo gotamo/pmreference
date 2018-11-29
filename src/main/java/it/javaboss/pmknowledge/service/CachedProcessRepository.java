@@ -1,5 +1,6 @@
 package it.javaboss.pmknowledge.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -121,6 +122,16 @@ public class CachedProcessRepository implements ProcessService {
 		return documentRepository.findById(id).orElse(null);
 	}
 
-	
-	
+	@Override
+	public List<Document> findConnectedDocumentById(Long id) {
+		List<Document> connectedDocs = new ArrayList<>();
+		
+		Document document = findDocumentById( id );
+		if ( document.getParent() != null ) {
+			connectedDocs.add( document.getParent() );
+		}
+		connectedDocs.addAll( documentRepository.findByParent_id( document.getId() ) );
+		
+		return connectedDocs;
+	}
 }

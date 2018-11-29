@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">WBS Dictionary</ui:define>
+	
+	<ui:define name="content">
+		Il dizionario della WBS (o WBS Dictionary) è un documento di gestione del progetto che fornisce informazioni dettagliate su 
+		ciascun componente nella struttura di scomposizione del lavoro (WBS).
+		<br/>
+		Insieme al Project Scope Statement approvato ed alla Work Breakdown Structure (WBS), il dizionario della WBS fa parte 
+		della Scope Baseline. Una volta approvato, può essere modificato solo attraverso l'applicazione delle procedure formali di controllo delle modifiche. 
+		In quanto tale, è uno strumento utile per monitorare e controllare l'ambito, i costi e la pianificazione.
+		
+		<h2>Struttura</h2>
+		Gli informazioni che possono caratterizzare gli elementi appartenenti al dizianario della WBS sono:
+		<ul>
+			<li>Identificativo dell'elemento.</li>
+			<li>Assunti e limiti.</li>
+			<li>Organizzazione responsabile del componente.</li>
+			<li>Milestone di schedulazione.</li>
+			<li>Attività di schedulazione associate (se possibile).</li>
+			<li>Risorce richieste.</li>
+			<li>Stima dei costi e dei tempi.</li>
+			<li>Requisiti di qualità.</li>
+			<li>Criteri di accettazione.</li>
+			<li>Riferimenti tecnici.</li>
+			<li>Informazioni contrattuali.</li>
+		</ul>
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="https://tensix.com/2014/09/what-is-a-wbs-dictionary/" target="_blank">What is a WBS Dictionary?</a><br/>
+		<a href="https://project-management-knowledge.com/definitions/w/work-breakdown-structure-dictionary/" target="_blank">Work Breakdown Structure Dictionary</a><br/>
+	</ui:define>
+</ui:composition>

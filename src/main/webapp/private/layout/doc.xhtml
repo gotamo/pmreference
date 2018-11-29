@@ -26,6 +26,22 @@
 	   			<ui:insert name="content" />
 	    	</div>
 	    	<div class="ui-g-12">
+	    		<h2><h:outputText value="#{msg['doc.reldoc.title']}" rendered="#{not empty processManagedBean.relatedDocuments}"/></h2>
+	    		<ul>
+		    		<ui:repeat var="document" value="#{processManagedBean.relatedDocuments}">
+		    			<li>
+			    			<h:outputText value="#{document.fullName} " />
+			               	<h:outputText rendered="#{not empty document.shortName}" value=" (#{document.shortName}) " />
+		                	<p:commandLink action="#{showInfoManagedBean.showDocument}" rendered="#{not empty document.fileName}">
+				        		<h:graphicImage  value="/resources/img/open_link_2.png" height="15px" width="15px"/>
+				        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoToShow}" value="#{document.fileName}"/>
+				        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoId}" value="#{document.id}"/>
+				        	</p:commandLink>	    		
+				        </li>
+		    		</ui:repeat>
+	    		</ul>
+	    	</div>
+	    	<div class="ui-g-12">
 	    		<h2><h:outputText value="#{msg['doc.link.title']}"/></h2>
 	    		<ui:insert name="link">
 	    			N/A

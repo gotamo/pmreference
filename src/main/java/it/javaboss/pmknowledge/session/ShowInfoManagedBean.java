@@ -81,7 +81,7 @@ public class ShowInfoManagedBean implements Serializable {
 	}
 	
 	public void showTool() throws MalformedURLException {
-		String fileName = buildFileName(documentPath);
+		String fileName = buildFileName(toolPath);
         
         System.out.println("ShowInfoManagedBean.show(): " + fileName );
         

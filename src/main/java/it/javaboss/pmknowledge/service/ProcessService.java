@@ -23,4 +23,5 @@ public interface ProcessService {
 	public List<ProcessInput> findProcessInputByDocumentId(Long id);
 	public List<ProcessOutput> findProcessOutputByDocumentId(Long docId);
 	public Document findDocumentById(Long id);
+	public List<Document> findConnectedDocumentById(Long id);
 }

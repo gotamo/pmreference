@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">Work Breakdown Structure (WBS)</ui:define>
+	
+	<ui:define name="content">
+		La WBS è la scomposizione gerarchica (ad albero) dello scope of work complessivo che deve essere eseguito per conseguire gli obiettivi 
+		del progetto e realizzare i deliverable richiesti (non solo quelli del cliente). In tal senso è un documento molto importante perchè 
+		ha come obiettivo il concordare e formalizzare ciò che è dentro l’ambito del progetto e ciò che ne resterà fuori. 
+		<br/>
+		Ogni elemento o macro attività della WBS è chiamato Work Breakdown Element (WBE). Tali elementi possono essere:
+		<ul>
+			<li><strong>Control Account (CA)</strong>: sono elementi intermedi di una WBS definiti come punti di controllo. Generalmente sono associati alla
+			responsabilità di un Control Acconut Manager (CAM) che ha l'autorità di gestire tutto il lavoro associato ma anche di monitorarlo e
+			fornire i report e le valutazioni richieste.</li>
+			
+			<li><strong>Planning Package</strong>: è un componente al di sotto del Control Account per il quale si conosce il lavoro che deve essere eseguito
+			ma senza una dettagliata schedulazione delle attività necessarie.</li>
+			
+			<li><strong>Work Package</strong>: è il componente al livello più basso della WBS (all’ultimo livello di scomposizione) per il quale è possibile
+			stabilire la durata ed il costo.</li>
+		</ul>
+		
+		<h2>Regola del 100%</h2>
+		La WBS deve includere il 100% del lavoro definito dal progetto e includere TUTTO il necessario (interno, esterno e appaltato) alla realizzazione 
+		del progetto, inclusa la gestione del progetto stesso. Tale regola si applica a tutti i livelli della gerarchia e può essere espressa dicendo
+		che: la somma delle componenti a livello più basso devono essere tutti quelli necessari e sufficienti al completamento dei corrispondenti deliverable 
+		a livello più alto.
+		
+		<h2>Approccio</h2>
+		La struttura della WBS può essere realizzata utilizzando vari approcci. Alcuni tra i metodi più utilizzati sono:
+		<ul>
+			<li>l'approccio <strong>top-down;</strong></li>
+			<li>ricorso a specifiche guideline aziendali;</li>
+			<li>l'uso di template per la WBS;</li>
+			<li>l'approccio <strong>bottom-up</strong>, utile quando si esegue l'integrazione dei sottocomponenti.</li>
+		</ul>
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="https://it.wikipedia.org/wiki/Work_breakdown_structure" target="_blank">Work breakdown structure</a><br/>
+		<a href="http://www.humanwareonline.com/project-management/center/wbs-work-breakdown-structure/" target="_blank">WBS di progetto: costruire la Work Breakdown Structure</a><br/>
+		<a href="http://www.humanwareonline.com/project-management/center/work-package/" target="_blank">Work Package</a><br/>
+	</ui:define>
+</ui:composition>

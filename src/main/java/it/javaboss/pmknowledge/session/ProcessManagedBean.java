@@ -41,4 +41,8 @@ public class ProcessManagedBean implements Serializable {
 	public List<ProcessInput> getProcessConsumingDocument() {
 		return processService.findProcessInputByDocumentId( showInfoManagedBean.getInfoId() );
 	}
+	
+	public List<Document> getRelatedDocuments() {
+		return processService.findConnectedDocumentById( showInfoManagedBean.getInfoId() );
+	}
 }
