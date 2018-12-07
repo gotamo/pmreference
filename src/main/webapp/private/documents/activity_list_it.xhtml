@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">Activity List and Activity Attributs</ui:define>
+	
+	<ui:define name="content">
+		<h3>Activity List</h3>
+		L'Activity List è l'elenco di tutte le attività che devono essere eseguite per completare il progetto. 
+		Ogni Work Package al livello inferiore di una WBS ha una Activity List associata che comprende tutte  
+		le attività che devono essere svolte per rilasciare il pacchetto di lavoro.
+		
+		
+		<h3>Activity Attributs</h3>
+		L'activity List si accompagna sempre, ed a volte coincide, con il documento Activity Attributes. Scopo del documento
+		è quello di fornire più dettagli possibili sulle attività e rendere semplice e veloce per un utente l'accesso a tali 
+		informazioni.
+		
+		<br/><br/>
+		
+		Alcune categorie di informazioni che dovrebbero essere incluse nell'elenco delle attività possono essere:
+		<ul>
+			<li>l'identificatore univoco dell'attività;</li>
+			<li>categoria di appartenenza;</li>
+			<li>il titolo o una breve descrizione dell'attività;</li>
+			<li>la descrizione dettagliata dell'attività;</li>
+			<li>un elenco di membri del gruppo di progetto che possono essere assegnati all'attività;</li>
+			<li>tempi e costi dell'attività;</li>
+			<li>luoghi specifici in cui l'attività può aver luogo.</li>
+		</ul>
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="https://toughnickel.com/business/Work-Breakdown-Structure-WBS-Activity-List-to-Project-Success" target="_blank">
+			Work Breakdown Structure (WBS) and Activity List to Project Success
+		</a><br/>
+		<a href="https://project-management-knowledge.com/definitions/a/activity-attributes/" target="_blank">
+			Activity Attributes
+		</a><br/>
+	</ui:define>
+</ui:composition>
