@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">Project Schedule Network Diagram</ui:define>
+	
+	<ui:define name="content">
+		Il Project Schedule Network Diagram è una rappresentazione grafica delle attività di progetto e della loro dipendenze, 
+		spesso generato in modo automatico da tool di project management.
+
+		<h2>Dipendenze</h2>
+		Le dipendenze tra le attività possono essere <strong>obbligatorie</strong> o <strong>discrezionali</strong> oppure essere di natura 
+		<strong>interna</strong> o <strong>esterna</strong>.
+		<ul>
+			<li><strong>Dipendenze Obbligatorie</strong>: sono imposte per legge, da un contratto o spesso da una limitazione fisica. Sono anche
+				dette relazioni <strong>hard ligic</strong>. Ad esempio un prototipo deve essere costruito prima di poter essere testato.</li>
+			
+			<li><strong>Dipendenze Discrezionali</strong>: vengono stabilite sulla base di best practice o quando una specifica sequenza è voluta, 
+				sebbene ci siano altre sequenze accettabili. Note anche con il nome di <strong>preferred</strong> logic, <strong>preferential</strong> logic 
+				o <strong>soft</strong> logic. Queste dipendenze possono essere rimosse utilizzando tecniche di <strong>fast tracking.</strong></li>
+		</ul>
+		<ul>
+			<li><strong>Dipendenze Esterne</strong>: compotano relazioni tra attività di progetto ed attività che non sono di progetto. Ad esempio
+				il test di un software potrebbe dipendere dalla consegna di hardware adatto da un fornitore.</li>
+			
+			<li><strong>Dipendenze Interne</strong>: comportano una relazione di precedenza fra le attività di progetto. Ad esempio il team non può
+				testare un apparecchio fino a quando non sia completato il suo assemblaggio.</li>
+		</ul>
+		
+		Generalmente le dipendenze <strong>esterne</strong> sono fuori dal controllo del team di progetto, mentre quelle <strong>interne</strong> sono
+		sotto il diretto controllo del team.
+		
+		<h2>Relazioni</h2>
+		Le tipologie di relazioni che possono sussistere tra le attività di progetto sono:
+		<ul>
+			<li><strong>Finish-to-Start (FS)</strong>: 
+				questo è il tipo più comune di relazione e prevede che l'attività precedente sia terminata prima che l'attività successiva possa iniziare.  
+				Va inoltre notato che se ci troviamo nella situazione in cui si debba valutare la possibilità di fare <strong>fast traking</strong> 
+				della schedulazione, queste relazioni offriranno la migliore opportunità di recuperare il tempo perduto in quanto non prevedono
+				alcuna sovrapposizione tra le attività.
+			</li>
+			<li><strong>Start-to-Start (SS)</strong>: ovvero l'attività precedente deve iniziare prima che l'attività successiva possa iniziare.</li>
+			<li><strong>Finish-to-Finish (FS)</strong>: ovvero l'attività precedente deve terminare prima che l'attività successiva possa terminare.</li>
+			<li><strong>Start-to-Finish (SF)</strong>: ovvero l'attività precedente deve iniziare prima che l'attività successiva possa terminare. 
+				Questo è il tipo di relazione meno comune. Un esempio è il cambio turno in cui una persona può lasciare il posto solamente quando chi
+				lo sostituisce è disponibile.</li>
+		</ul>
+		
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="http://www.cornelius-fichtner.com/index.php/pmp/923-pmp-exam-tip-the-schedule-network-diagram-explained" target="_blank">
+			The Schedule Network Diagram Explained
+		</a><br/>
+		<a href="https://toughnickel.com/business/How-to-Create-Schedule-Network-Diagram" target="_blank">
+			How to Create a Schedule Network Diagram
+		</a><br/>
+	</ui:define>
+</ui:composition>

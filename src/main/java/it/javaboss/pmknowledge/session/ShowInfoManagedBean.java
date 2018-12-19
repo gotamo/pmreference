@@ -3,6 +3,8 @@ package it.javaboss.pmknowledge.session;
 import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,9 +38,14 @@ public class ShowInfoManagedBean implements Serializable {
 	@Value("${dialog.tool.path}")
 	private String toolPath; 
 	
+	@Value("${dialog.base.path}")
+	private String basePath; 
+	
 	private String infoToShow;
 	
 	private Long infoId;
+	
+	private String infoName;
 
 	//---------------------------------------------------------------------------------------------
 	
@@ -55,6 +62,13 @@ public class ShowInfoManagedBean implements Serializable {
 	public void setInfoId(Long infoId) {
 		this.infoId = infoId;
 	}
+	
+	public String getInfoName() {
+		return infoName;
+	}
+	public void setInfoName(String infoName) {
+		this.infoName = infoName;
+	}	
 
 	//---------------------------------------------------------------------------------------------
 	
@@ -74,16 +88,24 @@ public class ShowInfoManagedBean implements Serializable {
 	
 	public void showDocument() throws MalformedURLException {
         String fileName = buildFileName(documentPath);
-        
+
         System.out.println("ShowInfoManagedBean.show(): " + fileName );
         
-		PrimeFaces.current().dialog().openDynamic( fileName, options, null);
+        if ( !Files.exists( Paths.get( fileName ) ) ) {
+        	fileName = basePath + "no_file_found.xhtml";
+        }
+		
+        PrimeFaces.current().dialog().openDynamic( fileName, options, null);
 	}
 	
 	public void showTool() throws MalformedURLException {
 		String fileName = buildFileName(toolPath);
         
         System.out.println("ShowInfoManagedBean.show(): " + fileName );
+        
+        if ( !Files.exists( Paths.get( fileName ) ) ) {
+        	fileName = basePath + "no_file_found.xhtml";
+        }
         
 		PrimeFaces.current().dialog().openDynamic( fileName, options, null);
 	}

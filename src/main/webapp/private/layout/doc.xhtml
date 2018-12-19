@@ -23,7 +23,9 @@
 		    	<h2><ui:insert name="title"/></h2>
 		    </div>
 	    	<div class="ui-g-12, text-justify">
-	   			<ui:insert name="content" />
+	   			<ui:insert name="content">
+	   				N/A
+	   			</ui:insert>
 	    	</div>
 	    	<div class="ui-g-12">
 	    		<h2><h:outputText value="#{msg['doc.reldoc.title']}" rendered="#{not empty processManagedBean.relatedDocuments}"/></h2>
@@ -36,6 +38,7 @@
 				        		<h:graphicImage  value="/resources/img/open_link_2.png" height="15px" width="15px"/>
 				        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoToShow}" value="#{document.fileName}"/>
 				        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoId}" value="#{document.id}"/>
+				        		<f:setPropertyActionListener target="#{showInfoManagedBean.infoName}" value="#{document.fullName}"/>
 				        	</p:commandLink>	    		
 				        </li>
 		    		</ui:repeat>
