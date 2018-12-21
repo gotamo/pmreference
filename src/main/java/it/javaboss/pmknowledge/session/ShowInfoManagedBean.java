@@ -91,9 +91,9 @@ public class ShowInfoManagedBean implements Serializable {
 
         System.out.println("ShowInfoManagedBean.show(): " + fileName );
         
-        if ( !Files.exists( Paths.get( fileName ) ) ) {
-        	fileName = basePath + "no_file_found.xhtml";
-        }
+//        if ( !Files.exists( Paths.get( fileName ) ) ) {
+//        	fileName = basePath + "no_file_found.xhtml";
+//        }
 		
         PrimeFaces.current().dialog().openDynamic( fileName, options, null);
 	}
@@ -103,9 +103,9 @@ public class ShowInfoManagedBean implements Serializable {
         
         System.out.println("ShowInfoManagedBean.show(): " + fileName );
         
-        if ( !Files.exists( Paths.get( fileName ) ) ) {
-        	fileName = basePath + "no_file_found.xhtml";
-        }
+//        if ( !Files.exists( Paths.get( fileName ) ) ) {
+//        	fileName = basePath + "no_file_found.xhtml";
+//        }
         
 		PrimeFaces.current().dialog().openDynamic( fileName, options, null);
 	}
