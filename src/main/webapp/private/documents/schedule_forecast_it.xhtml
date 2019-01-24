@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">Schedule Forecast</ui:define>
+	
+	<ui:define name="content">
+		Con Schedule Forecast si intende una previsione sulla pianificazione basata su condizioni ed eventi che potrebbero accadere nel futuro del progetto 
+		e calcolata in base alle informazioni e alle conoscenze disponibili al momento del calcolo. 
+		Nella gestione del progetto, le previsioni vengono aggiornate ed emesse in base delle informazioni sulla prestazione del lavoro 
+		o Work Performance Informazion (WPI) che sono fornite durante l'esecuzione del progetto. 
+		Tali informazioni si basano sulle prestazioni passate nella gestione del progetto e sulle prestazioni future previste 
+		e includono indicatori di rendimento del valore acquisito (earned value) che potrebbero avere un impatto sul progetto in futuro.
+		<br/>
+		Le previsioni di pianificazione derivano dal confronto dei progressi del progetto rispetto alla baseline e alla stima del tempo 
+		calcolato da completare (ETC - Estimate To Complete). Questo è tipicamente espresso in termini di varianza della schedulazione (SV - Schedule Variance)
+		e indice di prestazione della schedulazione (SPI - Schedule Performance Index). 
+		Per i progetti che non utilizzano il calcolo dell'earned value, viene fornita la varianze rispetto alle date di fine pianificata 
+		e alle date di fine prevista. 
+		<br/>
+		Nella gestione del progetto, la previsione è utilizzata per determinare se il progetto si trova ancora all'interno di intervalli 
+		di tolleranza definiti ed eventualmente per identificare le richieste di cambiamento necessarie a riportare il progetto all'interno di tali tolleranze.
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="https://www.smartsheet.com/hacking-pmp-how-calculate-schedule-variance" target="_blank" rel="noopener">
+			How to Calculate Schedule Variance
+		</a><br/>
+		<a href="https://www.mpug.com/articles/pmp-exam-prep-calculating-eac-and-etc-for-forecasting/" target="_blank" rel="noopener">
+			Calculating EAC and ETC for Forecasting
+		</a><br/>	
+	</ui:define>	
+</ui:composition>
