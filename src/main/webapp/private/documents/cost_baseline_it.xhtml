@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:d="http://java.sun.com/jsf/composite/components"
+	xmlns:a4j="http://richfaces.org/a4j" 
+	xmlns:p="http://primefaces.org/ui"
+	template="/private/layout/doc.xhtml">
+
+	<ui:define name="title">Cost Baseline</ui:define>
+	
+	<ui:define name="content">
+		
+		La Cost Baseline è la versione approvata del bugdet di progetto suddiviso per fasi temporali, escluse le <strong>management reserve</strong>, ed 
+		utilizzata come baseline di riferimento per la comparazione con i consuntivi. Ogni modifica alla cost baseline è soggetto al processo 
+		di controllo integrato delle modifiche.
+		E' sviluppata aggregando i costi approvati delle singole attività o WP. 
+		<br/>
+		La baseline dei costi include tutte le spese di attività/risorse del progetto e il denaro accantonato per rispondere ai rischi identificati 
+		(known unknowns) nel tempo e viene solitamente rappresentato come una curva a <strong>S</strong>.
+		
+		<br/>
+		<br/>
+		
+		Baseline dei costi = stime dei costi di progetto + riserve di contingenza
+		
+	</ui:define>
+	
+	<ui:define name="link">	
+		<a href="https://edward-designer.com/web/cost-baseline-vs-budget-for-pmp-exam/" target="_blank" rel="noopener">
+			Cost Baseline vs Budget 
+		</a><br/>
+		<a href="https://project-management-knowledge.com/definitions/c/cost-baseline/" target="_blank" rel="noopener">
+			Cost Baseline
+		</a><br/>	
+	</ui:define>	
+</ui:composition>
